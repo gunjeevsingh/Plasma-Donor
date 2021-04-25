@@ -268,3 +268,8 @@ tr.mainrow th{
   text-align: center;
 border: 2px solid #208454;
 }
+tr.nrmlrow th{
+  width: 250px;
+  text-align: center;
+border: 2px solid #208454;
+}

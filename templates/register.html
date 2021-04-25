@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <title>Registration</title>
@@ -18,10 +18,10 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Register as a Donor</a>
+                <a class="nav-link active" aria-current="page" href="{{ url_for('register') }}">Register as a Donor</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="find.html">Find Donors</a>
+                <a class="nav-link active" href="{{ url_for('view') }}">Find Donors</a>
               </li>
               
             </ul>
@@ -39,36 +39,35 @@
               </h1>
             </center>
           </div>
+                <div class="Registerh"> <center><h3>{{ msg }}</h3></center></div>
           <br><br>
           <div class="row formsec align-items-center ">
             
             <div class="col-md-6 form1">
-              <form action="">
-                <label for="Name" class="form-label"><h5>Full Name</h5></label>
-                <input class="form-control" type="text" placeholder="Enter your name" aria-label="Name" style="width: 50%;">
+          <form action="{{ url_for('register') }}" method="POST" id = 'form1'>
+                <label for="name" class="form-label"><h5>Full Name</h5></label>
+                <input class="form-control" name ='name' type="text" placeholder="Enter your name" aria-label="name" style="width: 50%;">
                 <br>
                 <label for="email" class="form-label"><h5>Email Address</h5></label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" style="width: 50%;">
+                <input type="email" class="form-control" name = "email" placeholder="name@example.com" style="width: 50%;">
                 <br>
                 <label for="city" class="form-label"><h5>City</h5></label>
-                <input class="form-control" type="text" placeholder="Enter your city" aria-label="city" style="width: 30%;">
+                <input class="form-control" type="text" name ='city' placeholder="Enter your city" aria-label="city" style="width: 30%;">
                 <br>
                 <label for="age" class="form-label"><h5>Age</h5></label>
-                <input class="form-control" type="text" placeholder="Age" aria-label="age" style="width: 9%;">
+                <input class="form-control" name ='age' type="text" placeholder="Age" aria-label="age" style="width: 9%;">
                 
                 <br>
-                <label for="phone" class="form-label"><h5>Contact Number</h5></label>
-                <input class="form-control" type="text" placeholder="10 digit Mobile Number" aria-label="phone" style="width: 35%;">
+                <label for="number" class="form-label"><h5>Contact Number</h5></label>
+                <input class="form-control" name ='number' type="text" placeholder="10 digit Mobile Number" aria-label="phone" style="width: 35%;">
            
 
-              </form>
               
             </div>
             <div class="col-md-6 form2">
-              <form action="">
-                <form action="">
+
                   <label for="state" class="form-label"><h5>Select your State</h5></label>
-                  <select class="form-select" aria-label="State" style="width: 30%;">
+                  <select class="form-select" name ='state' aria-label="State" style="width: 30%;">
                   <option selected>Select</option>
                   <option value="Andhra Pradesh">Andhra Pradesh</option>
                   <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -109,30 +108,29 @@
                 </select>
                 <br>
                 <label for="gender" class="form-label"><h5>Select your Gender</h5></label>
-                <select class="form-select" aria-label="gender" style="width: 50%;">
+                <select class="form-select" name ='gender' aria-label="gender" style="width: 50%;">
                   <option selected>Gender</option>
-                  <option value="1">Male</option>
-                  <option value="2">Female</option>
-                  <option value="3">Other</option>
-                  <option value="4">Don't wish to disclose</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                  <option value="NONE">Don't wish to disclose</option>
                 </select>
                 
                 <br>
                 <label for="bloodgroup" class="form-label"><h5>Select Blood Group</h5></label>
-                <select class="form-select" aria-label="bloodgroup" style="width: 10%;">
-                  <option selected>-</option>
-                  <option value="1">A+</option>
-                  <option value="2">B+</option>
-                  <option value="3">O+</option>
-                  <option value="4">AB+</option>
-                  <option value="5">A-</option>
-                  <option value="6">B-</option>
-                  <option value="7">O-</option>
-                  <option value="8">AB-</option>
-                </select>
+          <select class = 'form-select' id="BloodGroup"  style="width: 15%;"    name="BloodGroup">
+            <option value="A+"  >A+    </option>
+            <option value="A-"  >A-    </option>
+            <option value="B+"  >B+    </option>
+            <option value="B-"  >B-    </option>
+            <option value="AB+" >AB+  </option>
+            <option value="AB-" >AB-  </option>
+            <option value="O+"  >O+    </option>
+            <option value="O-"  >O-    </option>
+          </select>
                 <br>
                 <label for="month" class="form-label"><h5>Select Month of Recovery from Covid-19</h5></label>
-                <select class="form-select" aria-label="month" style="width: 30%;">
+                <select class="form-select" name ='month' aria-label="month" style="width: 30%;">
                   <option selected>Select</option>
                   <option value="1">January</option>
                   <option value="2">Febuary</option>
@@ -149,12 +147,12 @@
                 </select>
                 <br>
                 <label for="year" class="form-label"><h5>Year of Recovery</h5></label>
-                <select class="form-select" aria-label="year" style="width: 20%;">
+                <select class="form-select" name ='year' aria-label="year" style="width: 20%;">
                   <option selected>Select</option>
-                  <option value="1">2020</option>
-                  <option value="2">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
                 </select>
-              </form>
+
             </div>
           
           </div>
@@ -170,28 +168,13 @@
               <label class="form-check-label" for="flexCheckChecked">
                 I agree that this information be shared on the website to help people find my contact for plasma.
               </label>
-            </div>
-            <button type="button" class="btn btn-outline-success registerbtn" style="width: 10%;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Register
-            </button>
+            </div> 
+            <center>
+            <button type="submit" form="form1" class="btn btn-outline-success statesearchbtn" style="width: 25%;">Signup</button>
+          </center>
           </div>
         </div>
-        <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Thank You for Saving a Life!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                You have successfully registered.
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </section>
 
       <footer>
