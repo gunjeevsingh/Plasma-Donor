@@ -17,7 +17,7 @@ nav {
     z-index: 1;
   }
   nav.shift ul li a:hover {
-    color: #208454 !important;
+    color: #11A68B !important;
     font-weight: bold;
   }
   
@@ -184,6 +184,11 @@ nav ul li a:before {
     margin-top: 4%;
   }
 
+  option{
+    
+    color: #585858;
+  }
+
 .searchfind{
   background-color: #d1e7dd;
 }
@@ -199,17 +204,57 @@ h1.searcht{
 /*Registration*/
 
 .register{
+  background-image: url("newsvg.png") ;
   margin-top: 3.5rem;
-  background-color: #d1e7dd;
   overflow-x: hidden;
 }
 
+.register .dumbass{
+  
+  text-align: center;
+  column-count: 2;
+-webkit-column-count: 2;
+-moz-column-count: 2;
+column-gap: 42px;
+-webkit-column-gap: 42px;
+-moz-column-gap: 42px;
+column-rule: 1px solid rgba(0,0,0,0.03);
+-webkit-column-rule: 1px solid rgba(0,0,0,0.03);
+-moz-column-rule: 1px solid rgba(0,0,0,0.03);
+
+  background-color: rgba(255, 255, 255, 0.637);
+  border-radius: 40px;
+  padding: 30px;
+  box-shadow: 1px 1px 16px 1px rgba(125,125,125,0.8);
+  -webkit-box-shadow: 1px 1px 16px 1px rgba(125,125,125,0.8);
+  -moz-box-shadow: 1px 1px 16px 1px rgba(125,125,125,0.8);
+}
+
+.register .formsec .form-titles{
+  text-align: center;
+color:#585858;
+}
+
+.form-check .form-check-input .form-check-label
+ {
+ color: white;
+  }
+
+   .form-control {
+    margin: auto;
+  }
+
 .Registerh{
-  color: #208454;
+  color: #585858;
   margin-top: 3%;
   font-weight: bolder;
   font-size: 3rem;
 }
+
+.register .last-button{
+text-align: centre;
+}
+
 .bloodimg{
   width: 100%;
 }
@@ -218,13 +263,16 @@ h1.searcht{
   margin-top: 2rem;
 }
 
-.form2{
-  margin-right: -10%;
-  margin-top: -1% !important;
-}
-.form1{
+
+ .register .form1{
+   text-align: centre;
   margin-left: 10%;
 }
+
+ .register .form1 .form-select{
+   align-self: center;
+   margin: auto;
+ }
 
 .accept{
   margin-left: 10%;
@@ -242,7 +290,7 @@ h1.searcht{
 }
 
 footer{
-  background-color: #208454;
+  background-color: #11A68B;
   color: #ffffff;
   font-size: larger;
   padding: 5px;
