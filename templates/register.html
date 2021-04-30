@@ -31,44 +31,47 @@
       </nav> 
 
       <section class="register">
+
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <center>
+              <br><br><br>
               <h1 class="Registerh">
                 Register Yourself as a Donor Here
               </h1>
             </center>
           </div>
-                <div class="Registerh"> <center><h3>{{ msg }}</h3></center></div>
+                <div class="Registerh">
+                   <center>
+                     <h3>{{ msg }}</h3>
+                  </center>
+                </div>
           <br><br>
           <div class="row formsec align-items-center ">
             
-            <div class="col-md-6 form1">
+            <div  class="dumbass">
+            <div class=" form1">
           <form action="{{ url_for('register') }}" method="POST" id = 'form1'>
-                <label for="name" class="form-label"><h5>Full Name</h5></label>
-                <input class="form-control" name ='name' type="text" placeholder="Enter your name" aria-label="name" style="width: 50%;">
+            <br>
+                <label for="name" class="form-label"><h5 class="form-titles">Full Name</h5></label>
+                <input class="form-control" name ='name' type="text" placeholder="Enter your name" aria-label="name" style="width: 60%;">
                 <br>
-                <label for="email" class="form-label"><h5>Email Address</h5></label>
-                <input type="email" class="form-control" name = "email" placeholder="name@example.com" style="width: 50%;">
+                <label for="email" class="form-label"><h5 class="form-titles">Email Address</h5></label>
+                <input type="email" class="form-control" name = "email" placeholder="name@example.com" style="width: 60%;">
                 <br>
-                <label for="city" class="form-label"><h5>City</h5></label>
-                <input class="form-control" type="text" name ='city' placeholder="Enter your city" aria-label="city" style="width: 30%;">
+                <label for="city" class="form-label"><h5 class="form-titles">City</h5></label>
+                <input class="form-control" type="text" name ='city' placeholder="Enter your city" aria-label="city" style="width: 40%;">
                 <br>
-                <label for="age" class="form-label"><h5>Age</h5></label>
-                <input class="form-control" name ='age' type="text" placeholder="Age" aria-label="age" style="width: 9%;">
+                <label for="age" class="form-label"><h5 class="form-titles">Age</h5></label>
+                <input class="form-control" name ='age' type="text" placeholder="Age" aria-label="age" style="width: 15%;">
                 
                 <br>
-                <label for="number" class="form-label"><h5>Contact Number</h5></label>
-                <input class="form-control" name ='number' type="text" placeholder="10 digit Mobile Number" aria-label="phone" style="width: 35%;">
-           
-
-              
-            </div>
-            <div class="col-md-6 form2">
-
-                  <label for="state" class="form-label"><h5>Select your State</h5></label>
+                <label for="number" class="form-label"><h5 class="form-titles">Contact Number</h5></label>
+                <input class="form-control" name ='number' type="text" placeholder="10 digit Mobile Number" aria-label="phone" style="width: 55%;">
+                <br>       
+                  <label for="state" class="form-label"><h5 class="form-titles">Select your State</h5></label>
                   <select class="form-select" name ='state' aria-label="State" style="width: 30%;">
-                  <option selected>Select</option>
+                  <option selected>State</option>
                   <option value="Andhra Pradesh">Andhra Pradesh</option>
                   <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                   <option value="Assam">Assam</option>
@@ -107,8 +110,8 @@
                   <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                 </select>
                 <br>
-                <label for="gender" class="form-label"><h5>Select your Gender</h5></label>
-                <select class="form-select" name ='gender' aria-label="gender" style="width: 50%;">
+                <label for="gender" class="form-label"><h5 class="form-titles">Select your Gender</h5></label>
+                <select class="form-select" name ="gender" id="gender" aria-label="gender" style="width: 60%;">
                   <option selected>Gender</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -117,21 +120,22 @@
                 </select>
                 
                 <br>
-                <label for="bloodgroup" class="form-label"><h5>Select Blood Group</h5></label>
-          <select class = 'form-select' id="BloodGroup"  style="width: 15%;"    name="BloodGroup">
+                <label for="bloodgroup" class="form-label"><h5 class= "form-titles">Select Blood Group</h5></label>
+          <select class = 'form-select' id="BloodGroup"  style="width: 60%;"    name="BloodGroup">
+            <option selected>Blood Group</option>
             <option value="A+"  >A+    </option>
             <option value="A-"  >A-    </option>
             <option value="B+"  >B+    </option>
             <option value="B-"  >B-    </option>
-            <option value="AB+" >AB+  </option>
-            <option value="AB-" >AB-  </option>
+            <option value="AB+" >AB+   </option>
+            <option value="AB-" >AB-   </option>
             <option value="O+"  >O+    </option>
             <option value="O-"  >O-    </option>
           </select>
                 <br>
-                <label for="month" class="form-label"><h5>Select Month of Recovery from Covid-19</h5></label>
-                <select class="form-select" name ='month' aria-label="month" style="width: 30%;">
-                  <option selected>Select</option>
+                <label for="month" class="form-label"><h5 class="form-titles">Select Month of Recovery from Covid-19</h5></label>
+                <select class="form-select" name ='month' aria-label="month" style="width: 30%; text-align: center;">
+                  <option selected>Month</option>
                   <option value="1">January</option>
                   <option value="2">Febuary</option>
                   <option value="3">March</option>
@@ -146,41 +150,50 @@
                   <option value="12">December</option>
                 </select>
                 <br>
-                <label for="year" class="form-label"><h5>Year of Recovery</h5></label>
+                <label for="year" class="form-label"><h5 class="form-titles">Year of Recovery</h5></label>
                 <select class="form-select" name ='year' aria-label="year" style="width: 20%;">
-                  <option selected>Select</option>
+                  <option>Year </option>
                   <option value="2020">2020</option>
                   <option value="2021">2021</option>
                 </select>
 
             </div>
           
-          </div>
+          
           <div class="row">
             <div class="form-check accept acc1">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
               <label class="form-check-label" for="flexCheckDefault">
-                I hereby declare that all the information entered by me is true to the best of my knowledge.
+                I hereby declare that all the information entered by me <br> is true to the best of my knowledge.
               </label>
             </div>
+            <br>
             <div class="form-check accept">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-              <label class="form-check-label" for="flexCheckChecked">
-                I agree that this information be shared on the website to help people find my contact for plasma.
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked required>
+              <label class="form-check-label" for="flexCheckChecked" >
+                I agree that this information be shared on the website <br> to help people find my contact for plasma.
               </label>
             </div> 
             <center>
-            <button type="submit" form="form1" class="btn btn-outline-success statesearchbtn" style="width: 25%;">Signup</button>
+              <br>
+              <br>
+            
+          <!-- <br><br><br><br><br><br><br> -->
           </center>
           </div>
+          <button type="submit" form="form1" class="btn btn-outline-secondary" class="last-button" statesearchbtn" style="width: 25%;">Signup</button>
+
         </div>
+        </div>
+      </div>
+        <br><br><br><br>
 
       </section>
 
       <footer>
         <span>
           <center>
-            Made with Love
+            Be careful, not fearful.
           </center>
         </span>
       </footer>
